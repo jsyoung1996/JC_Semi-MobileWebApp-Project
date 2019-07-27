@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>화장실찾기.</title>	
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+<link rel="stylesheet" href="theme.css">
+</head>
+
+<body>
+
+<div data-role="page" id="page">
+	<div data-role="header" data-position="fixed" id="header">	
+	<a href="index.html" data-ajax="false" id="HomeBtn">홈으로</a> 
+	<!--<h1 id="title">상세정보</h1>-->
+    <div id="empty"></div>
+    <a href="javascript:history.go(-1)" class="ui-btn-right">뒤로가기</a> 
+	</div> 
+<center>
+  <div data-role="content"  class="main">
+
+	<table border="1" bordercolor="#FFFFFF" width="90%" class="detail_table">
+            <th colspan="2" id="th1">화장실 상세정보</th>
+            <tr> <td width="20%" class="td1"><center> <img src="images/big_toilet.png" width="20%"><br/>남자 대변기 수</center></td> <td width="20%"><h3 class="td2"> <p class="td">1개</p></h3></td></tr>
+            <tr> <td width="20%" class="td1"><center> <img src="images/small_toilet.png" width="20%"><br/>남자 소변기 수</center></td> <td width="20%"><h3 class="td2"> <p class="td">0개</p></h3></td></tr>
+            <tr> <td width="20%" class="td1"><center> <img src="images/big_toilet.png" width="20%"><br/>여자 대변기 수</center></td> <td width="20%"><h3 class="td2"> <p class="td">1개</p></h3></td></tr>
+            <tr> <td width="20%" class="td1"><center><img src="images/time.png" width="20%"><br/>개방시간</center></td> <td width="20%"><h3 class="td2"> <p class="td">24시간</p></h3></td></tr>
+            <tr> <td width="20%" class="td1"><center><img src="images/add.png" width="20%"><br/>주소</center></td> <td width="20%"><h4 class="td2"> <p class="td">서울특별시 양천구 신정3동 621</p></h4></td></tr>
+            
+     </table>
+     <div id="add_book_btn">
+     <input type="button" value="즐겨찾기추가"/>
+     </div>
+	<!--<h3><font color="#FFFFFF"><center>변기 갯수는 <br/>장애인전용<br/> 변기의 갯수 입니다.</center></font></h3>-->
+
+          </div>      
+  <div data-role="footer" data-position="fixed" id="footer">
+	<center>
+            <div class="hovereffect">
+            <table width="100%">
+					<tr>
+                    <th class="menu">
+                	<a href="Map.html" data-ajax="false"><img src="images/location.png" class="btn2"></a>
+					</th>
+                    <th class="menu">
+					<a href="Search.html" data-ajax="false"><img src="images/Search.png" class="btn2" value="검색"></a>	
+                    </th>
+                    <th class="menu">
+					<a href="Bookmarks.html" data-ajax="false"><img src="images/Bookmarks.png" class="btn2"></a>
+                    </th>
+                    <th class="menu">
+					<a href="Bell.html" data-ajax="false"><img src="images/Bell.png" class="btn2"></a>
+                    </th>
+                    </tr>
+                    <tr align="center" id="menu">
+                    	<td>Location</td>
+                        <td>Search</td>
+                        <td>BookMarks</td>
+                        <td>E-Bell</td>
+                    </tr>
+                    </table>
+                </div>
+          </center>
+  </div>
+
+</center>
+</div>
+</body>
+</html>
