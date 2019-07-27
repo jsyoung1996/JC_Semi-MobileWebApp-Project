@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>현재 위치</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<link rel="stylesheet" href="theme.css">
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+
+<style type="text/css">
+		#page{
+			background-color:#e74c3c;
+			background-repeat:no-repeat;
+			background-size:cover;
+		}
+		.ul li.book:after {
+			content:"즐겨찾기를 삭제할 수 있습니다.";
+			font-size:samll;
+			padding:3px 6px;
+			margin:0 5px;
+			border-radius:4px;
+			color:#fff;
+			background:#cdf;
+			margin: 0;
+			padding:0;
+		}
+		#logo{
+				display:inline;
+				width:13%;
+				margin-top:15px;
+				margin-left:3px;
+				margin-bottom:5px;
+				margin-right:3px;
+		}
+		#header{
+		    background-color: #e74c3c;
+		    border-color: #e74c3c;
+		}
+		#footer{
+			background-color: #5E5E5E;
+			    border-color: #5E5E5E;
+		}
+		.btn2{
+			width:25%;
+			margin-top:5px;
+			margin-left:20px;
+			margin-bottom:5px;
+			margin-right:20px;
+			
+		}
+		#BackBtn{
+			font-family: 'Gloria Hallelujah', cursive;
+		}
+		#HomeBtn{
+			font-family: 'Gloria Hallelujah', cursive;
+		}
+		#title {
+			color:#FFFFFF;
+			font-family: 'Gloria Hallelujah', cursive;
+			font-size:1.4em;
+			
+		}
+		#menu {
+			font-family: 'Gloria Hallelujah', cursive;
+			color:#FFFFFF;
+		}
+		</style>
+<script>
+function allCheckFunc( obj ) {
+		$("[name=checkOne]").prop("checked", $(obj).prop("checked") );
+}
+
+/* 체크박스 체크시 전체선택 체크 여부 */
+function oneCheckFunc( obj )
+{
+	var allObj = $("[name=checkAll]");
+	var objName = $(obj).attr("name");
+
+	if( $(obj).prop("checked") )
+	{
+		checkBoxLength = $("[name="+ objName +"]").length;
+		checkedLength = $("[name="+ objName +"]:checked").length;
+
+		if( checkBoxLength == checkedLength ) {
+			allObj.prop("checked", true);
+		} else {
+			allObj.prop("checked", false);
+		}
+	}
+	else
+	{
+		allObj.prop("checked", false);
+	}
+}
+
+$(function(){
+	$("[name=checkAll]").click(function(){
+		allCheckFunc( this );
+	});
+	$("[name=checkOne]").each(function(){
+		$(this).click(function(){
+			oneCheckFunc( $(this) );
+		});
+	});
+});
+</script>        
+</head>
+
+<body>
+<div data-role="page" id="page">
+<center>
+   <div data-role="header" data-position="fixed" id="header">	
+
+	<a href="index.html" class="ui-btn">홈으로</a> 
+	<h1 id="title">즐겨찾기</h1>
+    <a href="javascript:history.go(-1)" class="ui-btn-right">뒤로가기</a> 
+	</div> 
+     
+  <div data-role="content" class="ui-content">
+  <form>  
+  <ul data-role="listview" data-inset="true" >
+
+  <fieldset class="clear-after">
+     <li data-role="list-divider" class="book"><label><input type="checkbox" name="checkAll" id="Allchoice"/><h3>전체선택</h3></label></li>
+     <li><label>
+                	<input type="checkbox" name="checkOne" id=""/>
+                    	<h3>와우근린공원</h3>
+                        <p>서울특별시 마포구 와우산로30길 81 (창전동)</p>
+                    </label></li>
+     <li><label>
+                	<input type="checkbox" name="checkOne" id=""/>
+                    	<h3>왕십리문화공원</h3>
+                        <p>서울특별시 성동구 도선동 35-2</p>
+                    </label></li>
+     <li><label>
+                	<input type="checkbox" name="checkOne" id=""/>
+                    	<h3>넓은마당</h3>
+                        <p>서울특별시 노원구 상계동 산 164-9</p>
+                    </label></li>
+     <li><label>
+                	<input type="checkbox" name="checkOne" id=""/>
+                    	<h3>화정역광장</h3>
+                        <p>경기 고양시 덕양구 화정동 972</p>
+                    </label></li>
+        </fieldset>
+  </ul>
+  
+	</form>
+    
+    <button data-icon="delete" data-inline="true">삭제</button>
+    <button data-icon="back" data-inline="true" data-ajax="false" onclick="location.href='bookmarks.html'">취소</button>
+  </div> 
+  <div data-role="footer" data-position="fixed" id="footer">
+  <center>
+           <div class="hovereffect">
+            <table width="100%">
+					<tr>
+                    <th class="menu">
+                	<a href="map.html" data-ajax="false"><img src="images/location.png" class="btn2"></a>
+					</th>
+                    <th class="menu">
+					<a href="search.html" data-ajax="false"><img src="images/Search.png" class="btn2" value="검색"></a>	
+                    </th>
+                    <th class="menu">
+					<a href="Bookmarks.html" data-ajax="false"><img src="images/Bookmarks.png" class="btn2"></a>
+                    </th>
+                    <th class="menu">
+					<a href="Bell.html" data-ajax="false"><img src="images/Bell.png" class="btn2"></a>
+                    </th>
+                    </tr>
+                    <tr align="center" id="menu">
+                    	<td>위치</td>
+                        <td>검색</td>
+                        <td>즐겨찾기</td>
+                        <td>E-벨</td>
+                    </tr>
+                    </table>
+                </div>
+            </center>
+  </div>
+  </center>
+ 
+  </div>
+</body>
+</html>
