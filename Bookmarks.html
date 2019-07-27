@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>현재 위치</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<link rel="stylesheet" href="theme.css">
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+<style type="text/css">
+		#page{background-color:#e74c3c;
+			background-repeat:no-repeat;
+			background-size:cover;
+		}	
+		ul li.book:after {
+			content:"4개의 즐겨찾기가 있습니다.";
+			font-size:samll;
+			padding:3px 6px;
+			margin:0 5px;
+			border-radius:4px;
+			color:#fff;
+			background:#cdf;
+		}
+		#logo{
+				display:inline;
+				width:15%;
+				margin-top:5px;
+				margin-left:5px;
+				margin-bottom:5px;
+				margin-right:5px;
+				}
+		#footer{
+			background-color: #5E5E5E;
+			    border-color: #5E5E5E;
+		}
+		#title{
+			color:#FFFFFF;
+			font-size:1.3em;
+		}
+		#header{
+		    background-color: #e74c3c;
+		    border-color: #e74c3c;
+		}
+		.ui-content{
+			font-family: 'Jeju Gothic', serif;
+		}
+		</style>	
+</head>
+
+<body>
+<div data-role="page" id="page">
+<center>
+   <div data-role="header" data-position="fixed" id="header">	
+
+	<a href="index.html" class="ui-btn">홈으로</a> 
+	<h1 id="title">즐겨찾기</h1>
+    <a href="javascript:history.go(-1)" class="ui-btn-right">뒤로가기</a> 
+	</div> 
+    
+    
+  <div data-role="content" class="ui-content">
+  <ul data-role="listview" data-inset="true" >
+     <li data-role="list-divider" class="book">즐겨찾기 목록</li>
+     <li><h3>와우근린공원</h3><p>서울특별시 마포구 와우산로30길 81 (창전동)</p></li>
+     <li><h3>왕십리문화공원</h3><p>서울특별시 성동구 도선동 35-2</p></li>
+     <li><h3>넓은마당</h3><p>서울특별시 노원구 상계동 산 164-9</p></li>
+     <li><h3>화정역광장</h3><p>경기 고양시 덕양구 화정동 972</p></li>
+  </ul>
+  	<button data-icon="edit" data-inline="true" onclick="location.href='bookmark_edit.html'">편집</button>
+  
+  </div>
+  <div data-role="footer" data-position="fixed" id="footer">
+	<center>
+            <div class="hovereffect">
+            <table width="100%">
+					<tr>
+                    <th class="menu">
+                	<a href="map.html" data-ajax="false"><img src="images/location.png" class="btn2"></a>
+					</th>
+                    <th class="menu">
+					<a href="search.html" data-ajax="false"><img src="images/Search.png" class="btn2" value="검색"></a>	
+                    </th>
+                    <th class="menu">
+					<a href="Bookmarks.html" data-ajax="false"><img src="images/Bookmarks.png" class="btn2"></a>
+                    </th>
+                    <th class="menu">
+					<a href="Bell.html" data-ajax="false"><img src="images/Bell.png" class="btn2"></a>
+                    </th>
+                    </tr>
+                    <tr align="center" id="menu">
+                    	<td>위치</td>
+                        <td>검색</td>
+                        <td>즐겨찾기</td>
+                        <td>E-벨</td>
+                    </tr>
+                    </table>
+                </div>
+        </center>  
+  </div>
+  </center>
+  </div>
+</body>
+</html>
